@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GP CRM - Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary": "#ffffff",
+                    "inverse-primary": "#abc7ff",
+                    "tertiary": "#3c1e00",
+                    "surface-container-highest": "#e0e3e5",
+                    "primary-fixed": "#d7e2ff",
+                    "tertiary-container": "#5b3000",
+                    "on-secondary": "#ffffff",
+                    "secondary": "#0d50d5",
+                    "tertiary-fixed": "#ffdcc1",
+                    "secondary-fixed-dim": "#b5c4ff",
+                    "secondary-container": "#386bef",
+                    "primary-fixed-dim": "#abc7ff",
+                    "on-error-container": "#93000a",
+                    "error-container": "#ffdad6",
+                    "on-primary-container": "#89a5dd",
+                    "on-primary-fixed": "#001b3f",
+                    "surface": "#f7f9fb",
+                    "surface-container": "#eceef0",
+                    "on-tertiary-container": "#d7985f",
+                    "primary-container": "#1a3a6b",
+                    "error": "#ba1a1a",
+                    "on-surface": "#191c1e",
+                    "surface-tint": "#415e91",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-fixed-variant": "#693c0a",
+                    "on-primary-fixed-variant": "#284678",
+                    "on-secondary-fixed": "#00174d",
+                    "on-background": "#191c1e",
+                    "secondary-fixed": "#dbe1ff",
+                    "inverse-surface": "#2d3133",
+                    "on-primary": "#ffffff",
+                    "surface-variant": "#e0e3e5",
+                    "primary": "#002451",
+                    "on-error": "#ffffff",
+                    "on-secondary-container": "#fefcff",
+                    "on-secondary-fixed-variant": "#003dab",
+                    "on-surface-variant": "#43474f",
+                    "inverse-on-surface": "#eff1f3",
+                    "background": "#f7f9fb",
+                    "surface-container-low": "#f2f4f6",
+                    "tertiary-fixed-dim": "#fcb87d",
+                    "surface-container-high": "#e6e8ea",
+                    "on-tertiary-fixed": "#2e1500",
+                    "surface-bright": "#f7f9fb",
+                    "outline-variant": "#c4c6d0",
+                    "surface-dim": "#d8dadc",
+                    "outline": "#747780"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, .font-manrope { font-family: 'Manrope', sans-serif; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="bg-background text-on-surface">
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-full z-50 h-screen w-64 bg-[#002451] dark:bg-slate-950 shadow-2xl shadow-[#002451]/10 flex flex-col">
+<div class="p-8">
+<div class="flex items-center gap-3 mb-10">
+<div class="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">videogame_asset</span>
+</div>
+<div>
+<h1 class="font-manrope font-black text-white text-xl tracking-tighter">GP CRM</h1>
+<p class="text-xs text-slate-400 font-manrope font-semibold tracking-wide">The Neon Architect</p>
+</div>
+</div>
+<nav class="space-y-2">
+<!-- Dashboard Active -->
+<a class="flex items-center gap-3 bg-[#0d50d5]/10 text-white border-l-4 border-[#0d50d5] py-3 px-6 font-manrope text-sm font-semibold tracking-wide transition-transform active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-3 text-slate-400 hover:text-white py-3 px-6 font-manrope text-sm font-semibold tracking-wide transition-all hover:bg-[#0d50d5]/5 active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span>Customers</span>
+</a>
+<a class="flex items-center gap-3 text-slate-400 hover:text-white py-3 px-6 font-manrope text-sm font-semibold tracking-wide transition-all hover:bg-[#0d50d5]/5 active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span>Analytics</span>
+</a>
+<a class="flex items-center gap-3 text-slate-400 hover:text-white py-3 px-6 font-manrope text-sm font-semibold tracking-wide transition-all hover:bg-[#0d50d5]/5 active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="mail">mail</span>
+<span>Messages</span>
+</a>
+</nav>
+</div>
+<div class="mt-auto p-8">
+<a class="flex items-center gap-3 text-slate-400 hover:text-white py-3 px-6 font-manrope text-sm font-semibold tracking-wide transition-all hover:bg-[#0d50d5]/5 active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span>Logout</span>
+</a>
+</div>
+</aside>
+<!-- TopNavBar -->
+<header class="flex justify-between items-center pl-72 pr-8 w-full sticky top-0 z-40 bg-white/85 dark:bg-slate-900/85 backdrop-blur-md h-16 shadow-[0px_20px_40px_rgba(0,36,81,0.06)]">
+<div class="flex items-center gap-4">
+<h2 class="font-manrope font-bold text-lg text-[#002451]">Dashboard</h2>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative hidden md:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm">search</span>
+<input class="pl-10 pr-4 py-2 bg-surface-container-high border-none rounded-lg text-sm w-64 focus:ring-2 focus:ring-secondary/20 transition-all" placeholder="Search analytics..." type="text"/>
+</div>
+<div class="flex items-center gap-3 border-l border-slate-200 pl-6">
+<button class="p-2 text-slate-500 hover:bg-slate-50 rounded-lg transition-all active:opacity-80">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 text-slate-500 hover:bg-slate-50 rounded-lg transition-all active:opacity-80">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<div class="flex items-center gap-3 ml-2 cursor-pointer group">
+<div class="text-right">
+<p class="text-xs font-bold text-primary font-manrope">Admin</p>
+<p class="text-[10px] text-slate-500 font-manrope">Superuser</p>
+</div>
+<img alt="Admin Avatar" class="w-8 h-8 rounded-full border-2 border-secondary/20 group-hover:border-secondary transition-all" data-alt="close up of professional gaming center manager with neon lights reflecting in glasses in high end office setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYxChGeGf2UhpdtMvAetli_HwJftaPvCpr44LI0cG-B9GeCxKcyIp-zTuHSssoAnlTLD6tTvbHS6WzcsyvKju-qI42A7kjLwlkO3aY5qwFOZbg8AdrFvxxJS9EHQdFYVQn_m0K9OykzJb3u6JhXSNXbIj9NLmdPUhLleyXPTi1PQ5XCRI-_zG4GDGHOLWPGqz3ks_49h9_tRNATxKXbrzph-eCWim9xxfqyEqSWit9MyqhLCXvct6N25BEVmFIEd8FZ3TBJb3FD7mk"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="ml-64 p-8 min-h-screen pt-4">
+<!-- Hero Metrics Section -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+<!-- Total Revenue -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-[0px_20px_40px_rgba(0,36,81,0.06)] border border-transparent">
+<div class="flex justify-between items-start mb-4">
+<div class="w-12 h-12 rounded-lg bg-secondary/10 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined">payments</span>
+</div>
+<span class="text-emerald-500 text-xs font-bold bg-emerald-50 px-2 py-1 rounded">+12.5%</span>
+</div>
+<p class="text-on-surface-variant font-label text-xs uppercase tracking-widest font-semibold mb-1">Total Revenue</p>
+<h3 class="text-3xl font-manrope font-extrabold text-primary">₹142,850</h3>
+<p class="text-[10px] text-slate-400 mt-2">Vs. last month (₹126,900)</p>
+</div>
+<!-- Active Players -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-[0px_20px_40px_rgba(0,36,81,0.06)]">
+<div class="flex justify-between items-start mb-4">
+<div class="w-12 h-12 rounded-lg bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">group</span>
+</div>
+<span class="text-emerald-500 text-xs font-bold bg-emerald-50 px-2 py-1 rounded">+8.2%</span>
+</div>
+<p class="text-on-surface-variant font-label text-xs uppercase tracking-widest font-semibold mb-1">Active Players</p>
+<h3 class="text-3xl font-manrope font-extrabold text-primary">1,204</h3>
+<p class="text-[10px] text-slate-400 mt-2">Active sessions across all hubs</p>
+</div>
+<!-- PC Occupancy -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-[0px_20px_40px_rgba(0,36,81,0.06)]">
+<div class="flex justify-between items-start mb-4">
+<div class="w-12 h-12 rounded-lg bg-tertiary-fixed flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined">desktop_windows</span>
+</div>
+<div class="flex gap-1">
+<span class="w-2 h-2 rounded-full bg-emerald-500 shadow-[0_0_8px_#10b981]"></span>
+<span class="text-xs font-bold text-slate-500">Live</span>
+</div>
+</div>
+<p class="text-on-surface-variant font-label text-xs uppercase tracking-widest font-semibold mb-1">PC Occupancy</p>
+<h3 class="text-3xl font-manrope font-extrabold text-primary">87%</h3>
+<div class="w-full h-2 bg-secondary-fixed rounded-full mt-4 overflow-hidden">
+<div class="h-full bg-gradient-to-r from-secondary to-secondary-container rounded-full" style="width: 87%"></div>
+</div>
+</div>
+<!-- Monthly Growth -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-[0px_20px_40px_rgba(0,36,81,0.06)]">
+<div class="flex justify-between items-start mb-4">
+<div class="w-12 h-12 rounded-lg bg-secondary-container/10 flex items-center justify-center text-secondary-container">
+<span class="material-symbols-outlined">trending_up</span>
+</div>
+</div>
+<p class="text-on-surface-variant font-label text-xs uppercase tracking-widest font-semibold mb-1">Monthly Growth</p>
+<h3 class="text-3xl font-manrope font-extrabold text-primary">24.3%</h3>
+<p class="text-[10px] text-slate-400 mt-2">New membership conversions</p>
+</div>
+</div>
+<!-- Charts and Activity Section -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Revenue Trends Bar Chart (Mockup) -->
+<div class="lg:col-span-2 bg-surface-container-lowest p-8 rounded-xl shadow-[0px_20px_40px_rgba(0,36,81,0.06)]">
+<div class="flex justify-between items-center mb-8">
+<div>
+<h4 class="font-manrope font-bold text-lg text-primary">Revenue Trends</h4>
+<p class="text-sm text-slate-500">Weekly intake analysis per category</p>
+</div>
+<select class="bg-surface-container-high border-none rounded-lg text-xs font-bold px-4 py-2 focus:ring-0">
+<option>Last 7 Days</option>
+<option>Last 30 Days</option>
+</select>
+</div>
+<div class="flex items-end justify-between h-64 gap-4 px-2">
+<!-- Monday -->
+<div class="flex flex-col items-center flex-1 group">
+<div class="w-full bg-surface-container-low rounded-t-lg relative flex flex-col justify-end overflow-hidden h-full">
+<div class="bg-secondary-container w-full transition-all duration-500 h-[45%]"></div>
+</div>
+<span class="mt-4 text-xs font-bold text-slate-400 group-hover:text-primary transition-colors">MON</span>
+</div>
+<!-- Tuesday -->
+<div class="flex flex-col items-center flex-1 group">
+<div class="w-full bg-surface-container-low rounded-t-lg relative flex flex-col justify-end overflow-hidden h-full">
+<div class="bg-secondary-container w-full transition-all duration-500 h-[65%]"></div>
+</div>
+<span class="mt-4 text-xs font-bold text-slate-400 group-hover:text-primary transition-colors">TUE</span>
+</div>
+<!-- Wednesday -->
+<div class="flex flex-col items-center flex-1 group">
+<div class="w-full bg-surface-container-low rounded-t-lg relative flex flex-col justify-end overflow-hidden h-full">
+<div class="bg-secondary-container w-full transition-all duration-500 h-[55%]"></div>
+</div>
+<span class="mt-4 text-xs font-bold text-slate-400 group-hover:text-primary transition-colors">WED</span>
+</div>
+<!-- Thursday -->
+<div class="flex flex-col items-center flex-1 group">
+<div class="w-full bg-surface-container-low rounded-t-lg relative flex flex-col justify-end overflow-hidden h-full">
+<div class="bg-secondary w-full transition-all duration-500 h-[90%] shadow-[0_0_15px_rgba(13,80,213,0.3)]"></div>
+</div>
+<span class="mt-4 text-xs font-bold text-primary transition-colors">THU</span>
+</div>
+<!-- Friday -->
+<div class="flex flex-col items-center flex-1 group">
+<div class="w-full bg-surface-container-low rounded-t-lg relative flex flex-col justify-end overflow-hidden h-full">
+<div class="bg-secondary-container w-full transition-all duration-500 h-[75%]"></div>
+</div>
+<span class="mt-4 text-xs font-bold text-slate-400 group-hover:text-primary transition-colors">FRI</span>
+</div>
+<!-- Saturday -->
+<div class="flex flex-col items-center flex-1 group">
+<div class="w-full bg-surface-container-low rounded-t-lg relative flex flex-col justify-end overflow-hidden h-full">
+<div class="bg-secondary-container w-full transition-all duration-500 h-[85%]"></div>
+</div>
+<span class="mt-4 text-xs font-bold text-slate-400 group-hover:text-primary transition-colors">SAT</span>
+</div>
+<!-- Sunday -->
+<div class="flex flex-col items-center flex-1 group">
+<div class="w-full bg-surface-container-low rounded-t-lg relative flex flex-col justify-end overflow-hidden h-full">
+<div class="bg-secondary-container w-full transition-all duration-500 h-[70%]"></div>
+</div>
+<span class="mt-4 text-xs font-bold text-slate-400 group-hover:text-primary transition-colors">SUN</span>
+</div>
+</div>
+<div class="mt-8 pt-8 border-t border-slate-100 flex gap-8">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-secondary"></span>
+<span class="text-xs font-medium text-on-surface-variant">Gaming Sessions</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-secondary-container"></span>
+<span class="text-xs font-medium text-on-surface-variant">Food &amp; Beverages</span>
+</div>
+</div>
+</div>
+<!-- Recent Activity Feed -->
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-[0px_20px_40px_rgba(0,36,81,0.06)] h-full overflow-hidden">
+<div class="flex justify-between items-center mb-6">
+<h4 class="font-manrope font-bold text-lg text-primary">Live Feed</h4>
+<button class="text-secondary text-xs font-bold hover:underline">View All</button>
+</div>
+<div class="space-y-6">
+<!-- Activity Item 1 -->
+<div class="flex gap-4">
+<div class="relative">
+<img alt="User" class="w-10 h-10 rounded-full bg-slate-100" data-alt="portrait of a teenage boy with a headset and gamer hoodie in a dimly lit room with blue ambient lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4avCPJJvMlCAot0QYKp6WtqpFa_o5hF-m6yZXk7-2r4llVWundOXu17-5GEFuKpW-hhsWgolrZQ6HP6hsMjxpRw7_4Xdjkgo2G4JUU7TZgQ9icTSMAv-q1qYSPu4v9XZ7RrIKkFFa-75kOYB9jGEq_vZ5d-TXcn_PTsKLDj1L4ue9pqEiiNJr7zQhrzeNZm7CcqSKvS9DhLESWVeMqdgufPJKKt_9zgc70gsYCLaLYmjvZZsED-qu71-_025I_ktJ-v6F3u9SB0Z_"/>
+<span class="absolute bottom-0 right-0 w-3 h-3 bg-emerald-500 border-2 border-white rounded-full"></span>
+</div>
+<div class="flex-1">
+<p class="text-sm font-semibold text-primary">Rohan Mehta</p>
+<p class="text-xs text-slate-500">Started session on PC #12</p>
+<span class="text-[10px] text-slate-400 mt-1 block">2 mins ago</span>
+</div>
+</div>
+<!-- Activity Item 2 -->
+<div class="flex gap-4">
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-sm">confirmation_number</span>
+</div>
+<div class="flex-1">
+<p class="text-sm font-semibold text-primary">Tournament Signup</p>
+<p class="text-xs text-slate-500">Valorant Clash: Mumbai Region</p>
+<span class="text-[10px] text-slate-400 mt-1 block">15 mins ago</span>
+</div>
+</div>
+<!-- Activity Item 3 -->
+<div class="flex gap-4">
+<div class="relative">
+<img alt="User" class="w-10 h-10 rounded-full bg-slate-100" data-alt="close up of a stylish young man with colored hair in a high end esports arena setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7qbgc1IXt99g0mmIcN8Cx6abF1lnRwF9oKJ0P79kKlT9X_gQGP7HYbY2p6FJFFtjY73ReAw7cXNFV_8FtCVNE0rRjxJ5UIFr34Tea_SuHxoHf8eWADKWdQv8OnC5yyheMcC7YswqqrRsxgMZhaw81EnmuTb5CprYSBerx2EKrSOuiffnEH9K6JTuQXk_uN538hsRMYjNg-sTUKHHnOxgctzMagpwULO_W5AE8MsV1F2UdiJtBbVqnO8Hjdbywl5cIH5tRRwtv9gk3"/>
+<span class="absolute bottom-0 right-0 w-3 h-3 bg-slate-300 border-2 border-white rounded-full"></span>
+</div>
+<div class="flex-1">
+<p class="text-sm font-semibold text-primary">Sanya Singh</p>
+<p class="text-xs text-slate-500">Purchased "God Tier" snack pack</p>
+<span class="text-[10px] text-slate-400 mt-1 block">45 mins ago</span>
+</div>
+</div>
+<!-- Activity Item 4 -->
+<div class="flex gap-4">
+<div class="w-10 h-10 rounded-full bg-error-container flex items-center justify-center text-error">
+<span class="material-symbols-outlined text-sm">warning</span>
+</div>
+<div class="flex-1">
+<p class="text-sm font-semibold text-primary">Network Alert</p>
+<p class="text-xs text-slate-500">Latency spike in North Wing Hub</p>
+<span class="text-[10px] text-slate-400 mt-1 block">1 hour ago</span>
+</div>
+</div>
+<!-- Activity Item 5 -->
+<div class="flex gap-4 opacity-75">
+<div class="relative">
+<img alt="User" class="w-10 h-10 rounded-full bg-slate-100" data-alt="profile of a professional gamer concentrating intensely on a match with neon highlights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVzJZ2V2gzr--_vLHzNgQqIB1PtFG1VqW86O5KTxkZwbPj1tDL7Mi8Txld94hWDJVu0J-irUtM5ZSsmN_JXEQ8uUEHp_Mit7jNF1USK6ztaoVJxDBZ5TtPqAToDNemz1p-jerSzHJNrJLvDmqS9IMYsIj6vlAC1qdGdsyH-Y156Ine-Z_M72LUeolc3uweDRVMMLci2W6KHjXDlAouPQ4Hej2A-20yYFtZBWqLxKFUmWck6AoNPFFekecDDXTwFguWJBMlxselVjzA"/>
+</div>
+<div class="flex-1">
+<p class="text-sm font-semibold text-primary">Zayan Khan</p>
+<p class="text-xs text-slate-500">Redeemed 500 Loyalty points</p>
+<span class="text-[10px] text-slate-400 mt-1 block">3 hours ago</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer / Secondary Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8 pb-12">
+<div class="bg-primary p-8 rounded-xl relative overflow-hidden group">
+<div class="relative z-10">
+<h4 class="font-manrope font-bold text-white text-xl mb-2">Weekend Tournament LIVE</h4>
+<p class="text-blue-200 text-sm mb-6 max-w-sm">Current prize pool has reached ₹50,000. Registration closing in 4 hours.</p>
+<button class="bg-gradient-to-r from-secondary to-secondary-container text-white px-6 py-2.5 rounded-lg text-sm font-bold shadow-lg shadow-blue-900/40 transition-transform active:scale-95">Manage Event</button>
+</div>
+<!-- Background Decorative Element -->
+<div class="absolute -right-10 -bottom-10 opacity-20 transform group-hover:scale-110 transition-transform duration-700">
+<span class="material-symbols-outlined text-[200px] text-white">trophy</span>
+</div>
+</div>
+<div class="bg-surface-container p-8 rounded-xl flex items-center gap-8">
+<div class="flex-1">
+<h4 class="font-manrope font-bold text-primary text-lg mb-1">Station Status</h4>
+<p class="text-slate-500 text-sm mb-4">Real-time status of your hardware inventory.</p>
+<div class="flex gap-4">
+<div>
+<p class="text-2xl font-bold text-primary">42</p>
+<p class="text-[10px] text-slate-400 uppercase tracking-tighter">Available</p>
+</div>
+<div class="border-l border-slate-300 pl-4">
+<p class="text-2xl font-bold text-secondary">08</p>
+<p class="text-[10px] text-slate-400 uppercase tracking-tighter">Reserved</p>
+</div>
+<div class="border-l border-slate-300 pl-4">
+<p class="text-2xl font-bold text-on-tertiary-container">04</p>
+<p class="text-[10px] text-slate-400 uppercase tracking-tighter">Maintenance</p>
+</div>
+</div>
+</div>
+<div class="hidden sm:block">
+<div class="w-24 h-24 rounded-full border-[8px] border-secondary-fixed flex items-center justify-center relative">
+<div class="absolute inset-0 rounded-full border-[8px] border-secondary border-t-transparent -rotate-45"></div>
+<p class="text-lg font-bold text-primary">82%</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Floating Action Button - Supressed on Dashboard for focused data viewing as per instructions, but adding contextual small help trigger -->
+<button class="fixed bottom-8 right-8 w-14 h-14 bg-primary text-white rounded-full shadow-2xl flex items-center justify-center hover:bg-secondary transition-colors group z-50">
+<span class="material-symbols-outlined">support_agent</span>
+</button>
+</body></html>

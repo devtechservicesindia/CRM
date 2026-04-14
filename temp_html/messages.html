@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GP CRM | Messages</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary": "#ffffff",
+                    "inverse-primary": "#abc7ff",
+                    "tertiary": "#3c1e00",
+                    "surface-container-highest": "#e0e3e5",
+                    "primary-fixed": "#d7e2ff",
+                    "tertiary-container": "#5b3000",
+                    "on-secondary": "#ffffff",
+                    "secondary": "#0d50d5",
+                    "tertiary-fixed": "#ffdcc1",
+                    "secondary-fixed-dim": "#b5c4ff",
+                    "secondary-container": "#386bef",
+                    "primary-fixed-dim": "#abc7ff",
+                    "on-error-container": "#93000a",
+                    "error-container": "#ffdad6",
+                    "on-primary-container": "#89a5dd",
+                    "on-primary-fixed": "#001b3f",
+                    "surface": "#f7f9fb",
+                    "surface-container": "#eceef0",
+                    "on-tertiary-container": "#d7985f",
+                    "primary-container": "#1a3a6b",
+                    "error": "#ba1a1a",
+                    "on-surface": "#191c1e",
+                    "surface-tint": "#415e91",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-fixed-variant": "#693c0a",
+                    "on-primary-fixed-variant": "#284678",
+                    "on-secondary-fixed": "#00174d",
+                    "on-background": "#191c1e",
+                    "secondary-fixed": "#dbe1ff",
+                    "inverse-surface": "#2d3133",
+                    "on-primary": "#ffffff",
+                    "surface-variant": "#e0e3e5",
+                    "primary": "#002451",
+                    "on-error": "#ffffff",
+                    "on-secondary-container": "#fefcff",
+                    "on-secondary-fixed-variant": "#003dab",
+                    "on-surface-variant": "#43474f",
+                    "inverse-on-surface": "#eff1f3",
+                    "background": "#f7f9fb",
+                    "surface-container-low": "#f2f4f6",
+                    "tertiary-fixed-dim": "#fcb87d",
+                    "surface-container-high": "#e6e8ea",
+                    "on-tertiary-fixed": "#2e1500",
+                    "surface-bright": "#f7f9fb",
+                    "outline-variant": "#c4c6d0",
+                    "surface-dim": "#d8dadc",
+                    "outline": "#747780"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, .font-manrope { font-family: 'Manrope', sans-serif; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface overflow-hidden">
+<!-- SideNavBar (Execution from JSON) -->
+<aside class="fixed left-0 top-0 h-full z-50 h-screen w-64 border-r-0 bg-[#002451] dark:bg-slate-950 shadow-2xl shadow-[#002451]/10 font-manrope text-sm font-semibold tracking-wide flex flex-col">
+<div class="p-8 flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+</div>
+<div>
+<h1 class="font-manrope font-black text-white text-xl tracking-tighter leading-none">GP CRM</h1>
+<p class="text-[10px] text-on-primary-container tracking-widest uppercase mt-1">The Neon Architect</p>
+</div>
+</div>
+<nav class="flex-1 mt-4">
+<a class="flex items-center gap-3 text-slate-400 hover:text-white py-3 px-6 transition-colors hover:bg-[#0d50d5]/5 duration-200 active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+                Dashboard
+            </a>
+<a class="flex items-center gap-3 text-slate-400 hover:text-white py-3 px-6 transition-colors hover:bg-[#0d50d5]/5 duration-200 active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined">group</span>
+                Customers
+            </a>
+<a class="flex items-center gap-3 text-slate-400 hover:text-white py-3 px-6 transition-colors hover:bg-[#0d50d5]/5 duration-200 active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined">analytics</span>
+                Analytics
+            </a>
+<!-- Active Navigation (Messages) -->
+<a class="flex items-center gap-3 bg-[#0d50d5]/10 text-white border-l-4 border-[#0d50d5] py-3 px-6 transition-colors hover:bg-[#0d50d5]/5 duration-200 active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">mail</span>
+                Messages
+            </a>
+</nav>
+<div class="p-6">
+<a class="flex items-center gap-3 text-slate-400 hover:text-white py-3 px-6 transition-colors hover:bg-[#0d50d5]/5 duration-200 active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined">logout</span>
+                Logout
+            </a>
+</div>
+</aside>
+<!-- Main Content Shell -->
+<main class="pl-64 h-screen flex flex-col">
+<!-- TopNavBar (Execution from JSON) -->
+<header class="flex justify-between items-center pr-8 w-full h-16 sticky top-0 z-40 bg-white/85 dark:bg-slate-900/85 backdrop-blur-md no-border shadow-[0px_20px_40px_rgba(0,36,81,0.06)] pl-8">
+<div class="flex items-center gap-4">
+<h2 class="font-manrope font-bold text-lg text-[#0d50d5]">Messages</h2>
+<div class="ml-8 relative">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline text-sm">search</span>
+<input class="bg-surface-container-high border-none rounded-lg pl-10 pr-4 py-1.5 text-sm w-80 focus:ring-2 focus:ring-secondary/20 transition-all outline-none" placeholder="Search conversations..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-4">
+<button class="w-10 h-10 flex items-center justify-center rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-all active:opacity-80">
+<span class="material-symbols-outlined text-outline">notifications</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-all active:opacity-80">
+<span class="material-symbols-outlined text-outline">settings</span>
+</button>
+</div>
+<div class="h-8 w-[1px] bg-outline-variant/30"></div>
+<button class="text-slate-500 font-manrope font-bold text-sm hover:text-secondary transition-colors">Logout</button>
+<div class="w-10 h-10 rounded-full bg-primary overflow-hidden shadow-sm">
+<img class="w-full h-full object-cover" data-alt="professional headshot of a creative director in a modern studio setting with soft warm key lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmbPSyfEUmWn0l-etPf2iP5zbYMoK7WW0BBbFWBL1oXnX3VQEFK1lR4m8jn_6Awl1zPDyFZYBW7ZUISbrACA8Cx_vHoRJpy6_WGoQiRy1pSXgy6LAgwlvyEgNVeSjnKkTYxeKQvJieUMQ98bA2qWMkYWTbusHwd2CWFEiEaXBARblpOLKEcVWlSEjLtxgWP_2Gmo-hyVPSzhZPA_3raD3OHeIdL0591YmZI_Skw_Ye7McEBdM742RRqUu8sgXBLbvhBIuTFaADTTOH"/>
+</div>
+</div>
+</header>
+<!-- Message Interface Canvas -->
+<div class="flex-1 flex overflow-hidden">
+<!-- Chat List Sidebar -->
+<section class="w-96 bg-surface-container-low flex flex-col border-r-0">
+<div class="p-6 pb-2">
+<div class="flex items-center justify-between mb-4">
+<h3 class="font-manrope font-extrabold text-primary text-xl tracking-tight">Recent Chats</h3>
+<button class="p-2 bg-secondary text-white rounded-lg shadow-lg shadow-secondary/20 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-sm">edit_square</span>
+</button>
+</div>
+<div class="flex gap-2 overflow-x-auto no-scrollbar pb-4">
+<span class="px-4 py-1.5 bg-secondary text-white rounded-full text-xs font-semibold whitespace-nowrap">All</span>
+<span class="px-4 py-1.5 bg-surface-container-lowest text-outline rounded-full text-xs font-semibold whitespace-nowrap hover:bg-white transition-colors cursor-pointer">Unread</span>
+<span class="px-4 py-1.5 bg-surface-container-lowest text-outline rounded-full text-xs font-semibold whitespace-nowrap hover:bg-white transition-colors cursor-pointer">VIP Players</span>
+<span class="px-4 py-1.5 bg-surface-container-lowest text-outline rounded-full text-xs font-semibold whitespace-nowrap hover:bg-white transition-colors cursor-pointer">Support</span>
+</div>
+</div>
+<div class="flex-1 overflow-y-auto no-scrollbar">
+<!-- Active Chat -->
+<div class="px-6 py-4 bg-surface-container-lowest border-l-4 border-secondary flex gap-4 cursor-pointer">
+<div class="relative">
+<img class="w-12 h-12 rounded-xl object-cover shadow-sm" data-alt="portrait of a young gamer with a focused expression in a room lit by neon blue and magenta ambient light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSsutpNwlByvJml3LhUzr9mqnv1-Hp2YuhPC2PhN-le-AeXM6eABOjliC-phIyaQc6oaeGGBg64MwE-1acdMcqptglFETKPRzYxBjAn2LScHTtfIfn7d_oWDjJ4veqjVM-9I8_slbAg6zqNSxjAbyANpVqQIOyi9fqttsYDazUU97A-2SRfBgJl3Ex2nKLs-MFSAriKYWANVduVVqLDgXxy80bwxgzQ27IVYmuu1JupLbVWuHDvIlWdyT_kQmc1e9brva8db2d1GNW"/>
+<div class="absolute -bottom-1 -right-1 w-4 h-4 bg-green-500 border-2 border-white rounded-full shadow-[0px_0px_8px_rgba(34,197,94,0.4)]"></div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start">
+<h4 class="font-bold text-primary truncate">Arjun "Phantom" Dev</h4>
+<span class="text-[10px] font-semibold text-secondary uppercase">12:45 PM</span>
+</div>
+<p class="text-sm text-on-surface-variant truncate font-medium">Yo, is PC-12 available for the next 4 hours? I'm coming with...</p>
+</div>
+</div>
+<!-- Chat Item -->
+<div class="px-6 py-4 hover:bg-surface-container-highest/30 flex gap-4 cursor-pointer transition-colors">
+<div class="relative">
+<img class="w-12 h-12 rounded-xl object-cover grayscale opacity-80" data-alt="close up profile of a woman smiling outdoors in a city park with warm sunlight highlights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQsUMXxX3speaxVIJbhCqgRAWLYHYolQGI-qKRoyZ3nW1BWyWYtDlYaX8rf0gLDLW_vpVvv86BiMBNA22yktHPzANlXZIMkqJQLjIoxLrpsx8RSl1UfZRmSue5Oe_WTWZInEEZ2eUqhkkyBtI1aCiUizU9HqCdZGQpqWRMFuUReJsZ9ryqxk7pzcYbbBgBNpHQbeG-R1mjNxIwddeuO-9YqZ9-hHZOCgjuit7qs6o8fNYG39az-GuNRh7DhvPV-5pNXgjujFQJPwk7"/>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start">
+<h4 class="font-bold text-primary truncate">Sarah Miller</h4>
+<span class="text-[10px] font-semibold text-outline uppercase">Yesterday</span>
+</div>
+<p class="text-sm text-outline truncate">Great, thanks for the membership upgrade! See you Friday.</p>
+</div>
+</div>
+<!-- Chat Item -->
+<div class="px-6 py-4 hover:bg-surface-container-highest/30 flex gap-4 cursor-pointer transition-colors">
+<div class="relative">
+<div class="w-12 h-12 rounded-xl bg-tertiary-container flex items-center justify-center font-manrope font-bold text-on-tertiary-container">RK</div>
+<div class="absolute -bottom-1 -right-1 w-4 h-4 bg-green-500 border-2 border-white rounded-full shadow-[0px_0px_8px_rgba(34,197,94,0.4)]"></div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start">
+<h4 class="font-bold text-primary truncate">Rohan Kumar</h4>
+<span class="text-[10px] font-semibold text-outline uppercase">11:20 AM</span>
+</div>
+<p class="text-sm text-on-surface truncate">Sent the screenshot of the payment.</p>
+</div>
+</div>
+<!-- Promotional Chat (Bot) -->
+<div class="px-6 py-4 hover:bg-surface-container-highest/30 flex gap-4 cursor-pointer transition-colors">
+<div class="w-12 h-12 rounded-xl bg-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">smart_toy</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start">
+<h4 class="font-bold text-primary truncate">Promo Bot</h4>
+<span class="text-[10px] font-semibold text-outline uppercase">09:00 AM</span>
+</div>
+<p class="text-sm text-secondary truncate font-semibold italic">Broadcast: Happy Hours starting now!</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Conversation Window -->
+<section class="flex-1 bg-surface flex flex-col relative">
+<!-- Chat Header -->
+<div class="h-20 px-8 flex items-center justify-between bg-white shadow-sm z-10">
+<div class="flex items-center gap-4">
+<div class="relative">
+<img class="w-10 h-10 rounded-full object-cover" data-alt="portrait of a young gamer with a focused expression in a room lit by neon blue and magenta ambient light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMhOwTAj0l7PjmrCGJWMBJClH99dBa_Xw2gcBi13PDXLfwmQriGWd9Amr44COy9zCEDPaFkgn8T1TzGJIbkg-YJfcC38drrhl4CqKRX5vQtMJL_q4srdl75i17WV03OCJ9zgnTwuUrbkzbfFA55XQDiQtdD4dJjBXJR4PheVY747e_mEwBwjBKFloLfmyzRNtPctJj0woeI4ZBA2J4yDo6CqlGUlChXCLvfoUh2rG9a2f2s6mhndfdtI4Dtmj1nJ3LESQixMvoSIqE"/>
+<div class="absolute bottom-0 right-0 w-3 h-3 bg-green-500 border-2 border-white rounded-full"></div>
+</div>
+<div>
+<h3 class="font-manrope font-bold text-primary">Arjun "Phantom" Dev</h3>
+<p class="text-xs text-secondary font-medium">Member since 2023 • Platinum Tier</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="w-10 h-10 flex items-center justify-center rounded-lg hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-outline">videocam</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-outline">call</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-outline">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Chat Messages Area -->
+<div class="flex-1 overflow-y-auto p-8 flex flex-col gap-6 no-scrollbar">
+<div class="flex flex-col items-center my-4">
+<span class="px-3 py-1 bg-surface-container-high rounded-full text-[10px] font-bold text-outline uppercase tracking-widest">Today</span>
+</div>
+<!-- Received Message -->
+<div class="flex items-end gap-3 max-w-[70%]">
+<img class="w-8 h-8 rounded-full object-cover" data-alt="portrait of a young gamer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJIOL2NMaQfF_qB5C9eIc1OP50Vwd3qOwCdZ3mtrit9acnueLYPGmIoswOyJlS1TYki20USgqooWj4fEdpAk8jnS-rzPOiYFgk3Jn9jvFvuEtaw9j6hSmp3Qehhl-gImYDbUIwEZ6RVh_HiNdxGZYxyeFHFe4iyyOprll5Il3xZLJr29pGdVjgoBUR9KOzfNkt1xq5KVkeYJ0OXqKKMWknyHUnNYoqJoHwyS4kd4qaSvQikCA0B2rheBc1DuDnw78P0cTqjuJYW5NT"/>
+<div class="p-4 bg-surface-container-highest rounded-2xl rounded-bl-none">
+<p class="text-sm leading-relaxed">Hey, quick question. Are there any discounts for booking 4+ hours on the RTX 4090 stations today? Coming in with my squad.</p>
+<span class="text-[10px] text-outline font-medium mt-2 block">12:42 PM</span>
+</div>
+</div>
+<!-- Sent Message -->
+<div class="flex items-end gap-3 max-w-[70%] ml-auto flex-row-reverse">
+<div class="p-4 bg-secondary text-white rounded-2xl rounded-br-none shadow-lg shadow-secondary/10">
+<p class="text-sm leading-relaxed">Hey Arjun! Yes, we have a "Squad Pack" — 20% off for 4+ hours on premium stations. I've pre-booked PC 12, 13, and 14 for you. See you soon!</p>
+<span class="text-[10px] text-white/70 font-medium mt-2 block text-right">12:44 PM • Read</span>
+</div>
+</div>
+<!-- Received Message (WhatsApp Status Style) -->
+<div class="flex items-end gap-3 max-w-[70%]">
+<img class="w-8 h-8 rounded-full object-cover" data-alt="portrait of a young gamer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxFM8YVPNo6yF9A_Tq_eEEvWdkkonSXklBRH8W1WGxSOfKJl7jlsAW0THpErMqUAs-P3CtUJ7WLPtERCT8IHG8_y5MypOsAIH1Ht3qHtixoFV8GqxpQ9AsMJbEv97Hl-RlJsXOvrvSEhYbAVvLGQ4jSpFTMQCSeXSF0_7FBhcU4WRGz0b8CZpBO_wB85lsI8qser1HOJfdRqogRz94v56kBpb51PSFflpkrYUHeZYztIbcm8KdZ4cN9N9c8sMQTc5bDgA2vzxsexNe"/>
+<div class="p-4 bg-surface-container-highest rounded-2xl rounded-bl-none">
+<p class="text-sm leading-relaxed">Yo, is PC-12 available for the next 4 hours? I'm coming with three others. Can we get the corner spot?</p>
+<span class="text-[10px] text-outline font-medium mt-2 block">12:45 PM</span>
+</div>
+</div>
+</div>
+<!-- Chat Input & Tools -->
+<div class="p-6 bg-white border-t-0">
+<!-- Templates Chips -->
+<div class="flex gap-2 mb-4 overflow-x-auto no-scrollbar">
+<button class="flex items-center gap-2 px-4 py-2 bg-surface-container-low hover:bg-surface-container-high rounded-xl text-xs font-bold text-primary transition-colors whitespace-nowrap">
+<span class="material-symbols-outlined text-sm">flash_on</span>
+                            Quick Reply: Booking Confirmed
+                        </button>
+<button class="flex items-center gap-2 px-4 py-2 bg-surface-container-low hover:bg-surface-container-high rounded-xl text-xs font-bold text-primary transition-colors whitespace-nowrap">
+<span class="material-symbols-outlined text-sm">campaign</span>
+                            Promo: Weekend 2X Points
+                        </button>
+<button class="flex items-center gap-2 px-4 py-2 bg-surface-container-low hover:bg-surface-container-high rounded-xl text-xs font-bold text-primary transition-colors whitespace-nowrap">
+<span class="material-symbols-outlined text-sm">payment</span>
+                            Send Invoice
+                        </button>
+</div>
+<div class="flex items-center gap-4">
+<button class="w-12 h-12 flex items-center justify-center rounded-xl bg-surface-container-low text-outline hover:text-secondary transition-colors">
+<span class="material-symbols-outlined">add_circle</span>
+</button>
+<div class="flex-1 relative">
+<input class="w-full h-12 px-6 bg-surface-container-high border-none rounded-xl focus:ring-2 focus:ring-secondary/20 transition-all outline-none text-sm font-medium" placeholder="Type a message or select a template..." type="text"/>
+<div class="absolute right-4 top-1/2 -translate-y-1/2 flex gap-3">
+<span class="material-symbols-outlined text-outline cursor-pointer hover:text-secondary transition-colors text-xl">mood</span>
+<span class="material-symbols-outlined text-outline cursor-pointer hover:text-secondary transition-colors text-xl">attach_file</span>
+</div>
+</div>
+<button class="w-12 h-12 flex items-center justify-center rounded-xl bg-secondary text-white shadow-xl shadow-secondary/20 active:scale-95 transition-transform">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">send</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Right Panel: Automation & Details -->
+<section class="w-80 bg-surface-container-low p-6 overflow-y-auto no-scrollbar">
+<div class="mb-8">
+<h4 class="font-manrope font-extrabold text-primary text-sm uppercase tracking-widest mb-6">Automation</h4>
+<div class="space-y-4">
+<div class="p-4 bg-white rounded-2xl shadow-sm">
+<div class="flex justify-between items-center mb-2">
+<span class="text-xs font-bold text-primary">Smart Auto-Reply</span>
+<div class="w-8 h-4 bg-secondary rounded-full relative">
+<div class="absolute right-0.5 top-0.5 w-3 h-3 bg-white rounded-full"></div>
+</div>
+</div>
+<p class="text-[11px] text-outline leading-relaxed">Responds to availability queries when staff is offline.</p>
+</div>
+<div class="p-4 bg-white rounded-2xl shadow-sm">
+<div class="flex justify-between items-center mb-2">
+<span class="text-xs font-bold text-primary">Loyalty Alert</span>
+<div class="w-8 h-4 bg-outline-variant rounded-full relative">
+<div class="absolute left-0.5 top-0.5 w-3 h-3 bg-white rounded-full"></div>
+</div>
+</div>
+<p class="text-[11px] text-outline leading-relaxed">Notify user when they are 50 points from next tier.</p>
+</div>
+</div>
+</div>
+<div class="mb-8">
+<h4 class="font-manrope font-extrabold text-primary text-sm uppercase tracking-widest mb-6">Promotional Tools</h4>
+<div class="grid grid-cols-1 gap-3">
+<div class="group relative overflow-hidden h-32 rounded-2xl cursor-pointer">
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent z-10"></div>
+<img class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="vibrant esports tournament arena with large screen displays and professional gaming setups" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCc2qRIz2yfF0iNBfgIwBUB4o_3B_bI2VEN1oVXyeapCrNjvP73YVN4h6tPrUj0YgrcxwYv3W5yQUbHc_8K8Hq4dOr21NDd8Vi6l8_vOtT-vH0RvaY4oGllAj_z8aFpUENAXvsBl7pZO5-oR2NHIVf-IM4X0Dsne4gxUlaP8l7FlYw1bhluwh34j8tltP08lSQY4i9h7SF3nijhoXu74wPse1XdoGarlFxxgnTcrO6TRBLsd7Jdd_OmRf0S1dxMfLp1Na4bFJWNmJa3"/>
+<div class="absolute bottom-3 left-3 z-20">
+<p class="text-[10px] font-bold text-white uppercase tracking-wider mb-1">New Template</p>
+<h5 class="text-sm font-bold text-white">Tournament Invite</h5>
+</div>
+</div>
+<div class="group relative overflow-hidden h-32 rounded-2xl cursor-pointer">
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent z-10"></div>
+<img class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="close up of premium gaming keyboard and mouse on a glowing mousepad in a darkened room" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAl_MuS9rxg2-XBtIV2DY6VJUhrRc2w-qSRrQE0Ywsb6ba3Gd3BAS4KyhEnodjgGjdixlFrzc-EkyaPHwXaLZ-Gu598CtwednSS5J9Zo358dF7LZ9g0auq0aSRRMaPPfx3nNSnvHpQ-3PR1zqLRDTj3qYw6kgJJ9sabONXZa0mMPoODsPdicX6gN0h1es8GZqISer96EKLH9AyMJNzX0B0EU-ru_kxPmj3ULrWabiIe8HGNMXTjUvEuOsp6EgHPFKrLzWITro1rShBX"/>
+<div class="absolute bottom-3 left-3 z-20">
+<p class="text-[10px] font-bold text-white uppercase tracking-wider mb-1">Seasonal</p>
+<h5 class="text-sm font-bold text-white">Summer Discount</h5>
+</div>
+</div>
+</div>
+<button class="w-full mt-4 py-3 bg-white border border-secondary/20 rounded-xl text-secondary text-xs font-bold hover:bg-secondary hover:text-white transition-all">View All Templates</button>
+</div>
+<div>
+<h4 class="font-manrope font-extrabold text-primary text-sm uppercase tracking-widest mb-6">User Stats</h4>
+<div class="space-y-4">
+<div class="flex justify-between items-center py-2 border-b border-outline-variant/10">
+<span class="text-xs text-outline">Total Spent</span>
+<span class="text-sm font-bold text-primary">₹14,250</span>
+</div>
+<div class="flex justify-between items-center py-2 border-b border-outline-variant/10">
+<span class="text-xs text-outline">Avg. Session</span>
+<span class="text-sm font-bold text-primary">3.5 hrs</span>
+</div>
+<div class="flex justify-between items-center py-2">
+<span class="text-xs text-outline">Last Visited</span>
+<span class="text-sm font-bold text-primary">3 days ago</span>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+</body></html>

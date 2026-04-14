@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Analytics | GP CRM</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "on-tertiary": "#ffffff",
+                "inverse-primary": "#abc7ff",
+                "tertiary": "#3c1e00",
+                "surface-container-highest": "#e0e3e5",
+                "primary-fixed": "#d7e2ff",
+                "tertiary-container": "#5b3000",
+                "on-secondary": "#ffffff",
+                "secondary": "#0d50d5",
+                "tertiary-fixed": "#ffdcc1",
+                "secondary-fixed-dim": "#b5c4ff",
+                "secondary-container": "#386bef",
+                "primary-fixed-dim": "#abc7ff",
+                "on-error-container": "#93000a",
+                "error-container": "#ffdad6",
+                "on-primary-container": "#89a5dd",
+                "on-primary-fixed": "#001b3f",
+                "surface": "#f7f9fb",
+                "surface-container": "#eceef0",
+                "on-tertiary-container": "#d7985f",
+                "primary-container": "#1a3a6b",
+                "error": "#ba1a1a",
+                "on-surface": "#191c1e",
+                "surface-tint": "#415e91",
+                "surface-container-lowest": "#ffffff",
+                "on-tertiary-fixed-variant": "#693c0a",
+                "on-primary-fixed-variant": "#284678",
+                "on-secondary-fixed": "#00174d",
+                "on-background": "#191c1e",
+                "secondary-fixed": "#dbe1ff",
+                "inverse-surface": "#2d3133",
+                "on-primary": "#ffffff",
+                "surface-variant": "#e0e3e5",
+                "primary": "#002451",
+                "on-error": "#ffffff",
+                "on-secondary-container": "#fefcff",
+                "on-secondary-fixed-variant": "#003dab",
+                "on-surface-variant": "#43474f",
+                "inverse-on-surface": "#eff1f3",
+                "background": "#f7f9fb",
+                "surface-container-low": "#f2f4f6",
+                "tertiary-fixed-dim": "#fcb87d",
+                "surface-container-high": "#e6e8ea",
+                "on-tertiary-fixed": "#2e1500",
+                "surface-bright": "#f7f9fb",
+                "outline-variant": "#c4c6d0",
+                "surface-dim": "#d8dadc",
+                "outline": "#747780"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+            },
+            "fontFamily": {
+                "headline": ["Manrope"],
+                "body": ["Inter"],
+                "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .font-manrope { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .tonal-shift-only { border: none !important; }
+        .no-border { border: none !important; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-secondary-fixed selection:text-on-secondary-fixed">
+<!-- SideNavBar Shell -->
+<aside class="fixed left-0 top-0 h-full w-64 bg-[#002451] dark:bg-slate-950 z-50 shadow-2xl shadow-[#002451]/10 flex flex-col">
+<!-- Brand Identity -->
+<div class="px-8 py-10 flex flex-col gap-1">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">videogame_asset</span>
+</div>
+<h1 class="font-manrope font-black text-white text-xl tracking-tighter">GP CRM</h1>
+</div>
+<p class="font-manrope text-[10px] uppercase tracking-[0.2em] text-on-primary-container font-bold pl-[52px]">The Neon Architect</p>
+</div>
+<!-- Navigation Links -->
+<nav class="flex-1 flex flex-col gap-2">
+<a class="flex items-center gap-3 text-slate-400 hover:text-white py-3 px-6 transition-colors font-manrope text-sm font-semibold tracking-wide hover:bg-[#0d50d5]/5 duration-200 active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-3 text-slate-400 hover:text-white py-3 px-6 transition-colors font-manrope text-sm font-semibold tracking-wide hover:bg-[#0d50d5]/5 duration-200 active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span>Customers</span>
+</a>
+<!-- Active Navigation Item: Analytics -->
+<a class="flex items-center gap-3 bg-[#0d50d5]/10 text-white border-l-4 border-[#0d50d5] py-3 px-6 font-manrope text-sm font-semibold tracking-wide active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="analytics" style="font-variation-settings: 'FILL' 1;">analytics</span>
+<span>Analytics</span>
+</a>
+<a class="flex items-center gap-3 text-slate-400 hover:text-white py-3 px-6 transition-colors font-manrope text-sm font-semibold tracking-wide hover:bg-[#0d50d5]/5 duration-200 active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="mail">mail</span>
+<span>Messages</span>
+</a>
+</nav>
+<!-- Footer Action -->
+<div class="pb-8">
+<a class="flex items-center gap-3 text-slate-400 hover:text-white py-3 px-6 transition-colors font-manrope text-sm font-semibold tracking-wide hover:bg-[#0d50d5]/5 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span>Logout</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="pl-64 min-h-screen">
+<!-- TopNavBar Shell -->
+<header class="flex justify-between items-center pr-8 h-16 w-full sticky top-0 z-40 bg-white/85 backdrop-blur-md shadow-[0px_20px_40px_rgba(0,36,81,0.06)] pl-8">
+<h2 class="font-manrope font-bold text-lg text-[#0d50d5]">Analytics</h2>
+<div class="flex items-center gap-6">
+<!-- Search Bar -->
+<div class="relative group hidden lg:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-sm">search</span>
+<input class="bg-surface-container-high border-none rounded-lg pl-10 pr-4 py-1.5 text-sm focus:ring-2 focus:ring-secondary/20 transition-all w-64" placeholder="Search insights..." type="text"/>
+</div>
+<div class="flex items-center gap-4">
+<button class="w-10 h-10 flex items-center justify-center rounded-lg hover:bg-slate-50 transition-all text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg hover:bg-slate-50 transition-all text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<div class="h-8 w-[1px] bg-outline-variant mx-2"></div>
+<button class="flex items-center gap-2 hover:bg-slate-50 p-1.5 rounded-lg transition-all active:opacity-80">
+<div class="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center overflow-hidden">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="profile portrait of a tech professional in a gaming setup with neon ambient lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB16s3ATdXonrQb8B17BaqSBSNb7PhU1rryPsfAyBCgR_ewHmLOzdD5F_vk4EOU5hGCfzHbIJfTmjAdFrPoDDDFcx4zUH3igXdPw1igBBn_4ibUa-VH-PTHwMcP77fVqrpjABukho5NDBN2676tQ1T9-kkiS5ktHHLwwYj7qeiaKOGsQunpYxuBkuJi-PAnYE4jGPSyPnHiGoOEbMso7-qD-ISbbVlHytXfcIDwfyuMQ8FZgVf8FEmcPmEd-cKLVi3xJoGZl1FFmKfj"/>
+</div>
+<span class="text-sm font-bold font-manrope text-primary uppercase tracking-tighter">Logout</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Dashboard Content -->
+<div class="p-8 max-w-[1600px] mx-auto">
+<!-- Hero Metrics: High-Contrast Bento Style -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+<div class="md:col-span-2 bg-primary rounded-xl p-8 flex flex-col justify-between shadow-2xl relative overflow-hidden group">
+<div class="absolute -right-8 -bottom-8 opacity-10 group-hover:scale-110 transition-transform duration-700">
+<span class="material-symbols-outlined text-[180px] text-white">payments</span>
+</div>
+<div>
+<p class="font-label text-on-primary-container text-xs uppercase tracking-widest font-bold mb-1">Total Revenue • Q3</p>
+<h3 class="font-manrope text-white text-5xl font-extrabold tracking-tighter">$142,850.00</h3>
+</div>
+<div class="flex items-center gap-3 mt-8">
+<span class="px-2 py-1 bg-secondary rounded text-xs text-white font-bold">+12.4%</span>
+<p class="text-on-primary-container text-xs">Since last month</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-[0px_20px_40px_rgba(0,36,81,0.06)] flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-secondary bg-secondary-fixed p-2 rounded-lg">group</span>
+<span class="text-xs text-error font-bold">-2%</span>
+</div>
+<p class="font-label text-on-surface-variant text-xs uppercase tracking-widest font-bold mb-1">Retention Rate</p>
+<h3 class="font-manrope text-primary text-3xl font-extrabold">84.2%</h3>
+</div>
+<div class="w-full h-1.5 bg-surface-container rounded-full mt-4 overflow-hidden">
+<div class="h-full bg-secondary w-[84%]"></div>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-[0px_20px_40px_rgba(0,36,81,0.06)] flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-secondary bg-secondary-fixed p-2 rounded-lg">timer</span>
+<span class="text-xs text-on-tertiary-container font-bold">+18%</span>
+</div>
+<p class="font-label text-on-surface-variant text-xs uppercase tracking-widest font-bold mb-1">Avg. Session</p>
+<h3 class="font-manrope text-primary text-3xl font-extrabold">2.4h</h3>
+</div>
+<div class="flex gap-1 mt-4 h-8 items-end">
+<div class="w-2 bg-secondary-fixed h-1/2 rounded-t-sm"></div>
+<div class="w-2 bg-secondary h-full rounded-t-sm"></div>
+<div class="w-2 bg-secondary-fixed h-2/3 rounded-t-sm"></div>
+<div class="w-2 bg-secondary h-4/5 rounded-t-sm"></div>
+<div class="w-2 bg-secondary-fixed h-1/3 rounded-t-sm"></div>
+<div class="w-2 bg-secondary h-1/2 rounded-t-sm"></div>
+</div>
+</div>
+</div>
+<!-- Main Data Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Revenue & Peak Hours Chart Section -->
+<div class="lg:col-span-8 space-y-8">
+<!-- High Density Revenue Chart Card -->
+<div class="bg-surface-container-lowest rounded-xl p-8 shadow-[0px_20px_40px_rgba(0,36,81,0.06)]">
+<div class="flex justify-between items-end mb-10">
+<div>
+<h4 class="font-manrope font-bold text-xl text-primary">Revenue Pulse</h4>
+<p class="text-on-surface-variant text-sm">Hourly intake against booth capacity</p>
+</div>
+<div class="flex gap-2">
+<button class="px-4 py-1.5 rounded-lg bg-surface-container-high text-xs font-bold text-primary">Hourly</button>
+<button class="px-4 py-1.5 rounded-lg text-xs font-bold text-on-surface-variant hover:bg-surface-container-low transition-all">Daily</button>
+</div>
+</div>
+<div class="relative h-64 w-full flex items-end gap-3 px-2">
+<!-- Visual Chart Mockup -->
+<div class="flex-1 flex flex-col gap-1 items-center group">
+<div class="w-full bg-secondary/10 hover:bg-secondary/20 transition-all rounded-t-lg h-[40%]"></div>
+<span class="text-[10px] text-outline font-bold">10 AM</span>
+</div>
+<div class="flex-1 flex flex-col gap-1 items-center group">
+<div class="w-full bg-secondary/10 hover:bg-secondary/20 transition-all rounded-t-lg h-[55%]"></div>
+<span class="text-[10px] text-outline font-bold">12 PM</span>
+</div>
+<div class="flex-1 flex flex-col gap-1 items-center group">
+<div class="w-full bg-secondary/10 hover:bg-secondary/20 transition-all rounded-t-lg h-[70%]"></div>
+<span class="text-[10px] text-outline font-bold">02 PM</span>
+</div>
+<div class="flex-1 flex flex-col gap-1 items-center group relative">
+<div class="absolute -top-12 bg-primary text-white text-[10px] px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity">Peak: $2.4k</div>
+<div class="w-full bg-secondary rounded-t-lg h-[95%]"></div>
+<span class="text-[10px] text-primary font-bold">04 PM</span>
+</div>
+<div class="flex-1 flex flex-col gap-1 items-center group">
+<div class="w-full bg-secondary rounded-t-lg h-[85%]"></div>
+<span class="text-[10px] text-primary font-bold">06 PM</span>
+</div>
+<div class="flex-1 flex flex-col gap-1 items-center group">
+<div class="w-full bg-secondary/60 rounded-t-lg h-[100%]"></div>
+<span class="text-[10px] text-outline font-bold">08 PM</span>
+</div>
+<div class="flex-1 flex flex-col gap-1 items-center group">
+<div class="w-full bg-secondary/40 rounded-t-lg h-[75%]"></div>
+<span class="text-[10px] text-outline font-bold">10 PM</span>
+</div>
+<div class="flex-1 flex flex-col gap-1 items-center group">
+<div class="w-full bg-secondary/10 rounded-t-lg h-[30%]"></div>
+<span class="text-[10px] text-outline font-bold">12 AM</span>
+</div>
+</div>
+</div>
+<!-- Detailed Data List (No Dividers Rule) -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="bg-surface-container-low rounded-xl p-6">
+<h5 class="font-manrope font-bold text-primary mb-6">Popular Game Tiers</h5>
+<div class="space-y-4">
+<div class="bg-surface-container-lowest p-4 rounded-lg flex justify-between items-center">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded bg-[#002451] flex items-center justify-center text-white font-black text-xs">AAA</div>
+<div>
+<p class="text-sm font-bold text-primary">Cyberpunk 2077</p>
+<p class="text-[10px] text-on-surface-variant font-bold">High Demand</p>
+</div>
+</div>
+<span class="text-secondary font-bold">42% Play</span>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-lg flex justify-between items-center">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded bg-[#0d50d5] flex items-center justify-center text-white font-black text-xs">IND</div>
+<div>
+<p class="text-sm font-bold text-primary">Hades II</p>
+<p class="text-[10px] text-on-surface-variant font-bold">Rising</p>
+</div>
+</div>
+<span class="text-secondary font-bold">28% Play</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-xl p-6">
+<h5 class="font-manrope font-bold text-primary mb-6">Device Allocation</h5>
+<div class="space-y-4">
+<div class="flex justify-between items-center mb-1">
+<span class="text-xs font-bold text-on-surface-variant">RTX 4090 Stations</span>
+<span class="text-xs font-bold text-primary">92%</span>
+</div>
+<div class="w-full h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-[92%]"></div>
+</div>
+<div class="flex justify-between items-center mt-4 mb-1">
+<span class="text-xs font-bold text-on-surface-variant">PS5 Pro Booths</span>
+<span class="text-xs font-bold text-primary">64%</span>
+</div>
+<div class="w-full h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary/60 w-[64%]"></div>
+</div>
+<div class="flex justify-between items-center mt-4 mb-1">
+<span class="text-xs font-bold text-on-surface-variant">Sim Racing Rigs</span>
+<span class="text-xs font-bold text-primary">31%</span>
+</div>
+<div class="w-full h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-tertiary-container w-[31%]"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Sidebar: Retention & High Value Segment -->
+<div class="lg:col-span-4 space-y-8">
+<div class="bg-surface-container-lowest rounded-xl p-8 shadow-[0px_20px_40px_rgba(0,36,81,0.06)]">
+<h4 class="font-manrope font-bold text-xl text-primary mb-6">Customer Clusters</h4>
+<div class="space-y-6">
+<div class="flex gap-4">
+<div class="w-12 h-12 rounded-full border-4 border-secondary flex-shrink-0 flex items-center justify-center">
+<span class="text-xs font-bold text-primary">12%</span>
+</div>
+<div>
+<p class="text-sm font-bold text-primary uppercase tracking-tight">Whales</p>
+<p class="text-xs text-on-surface-variant">Daily visitors, spending &gt; $500/mo</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="w-12 h-12 rounded-full border-4 border-secondary-fixed flex-shrink-0 flex items-center justify-center">
+<span class="text-xs font-bold text-primary">48%</span>
+</div>
+<div>
+<p class="text-sm font-bold text-primary uppercase tracking-tight">Grinders</p>
+<p class="text-xs text-on-surface-variant">Weekend regulars, consistent loyalty</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="w-12 h-12 rounded-full border-4 border-tertiary-fixed flex-shrink-0 flex items-center justify-center">
+<span class="text-xs font-bold text-primary">40%</span>
+</div>
+<div>
+<p class="text-sm font-bold text-primary uppercase tracking-tight">Casuals</p>
+<p class="text-xs text-on-surface-variant">Ad-hoc visits, event based</p>
+</div>
+</div>
+</div>
+<button class="w-full mt-8 py-3 bg-secondary text-white rounded-lg font-bold text-sm shadow-lg shadow-secondary/20 hover:scale-[1.02] active:scale-95 transition-all">
+                            Export Segment Data
+                        </button>
+</div>
+<!-- Recent Anomalies / Activity -->
+<div class="bg-primary rounded-xl p-6 text-white">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-secondary-fixed-dim" style="font-variation-settings: 'FILL' 1;">bolt</span>
+<h4 class="font-manrope font-bold uppercase text-xs tracking-widest">Real-time Insights</h4>
+</div>
+<div class="space-y-4">
+<div class="bg-white/10 p-3 rounded-lg backdrop-blur-sm">
+<p class="text-[10px] text-on-primary-container font-bold uppercase tracking-widest mb-1">Alert</p>
+<p class="text-xs font-medium leading-relaxed">System noted 22% spike in VR usage between 11 PM - 1 AM. Consider late-night promotion.</p>
+</div>
+<div class="bg-white/10 p-3 rounded-lg backdrop-blur-sm">
+<p class="text-[10px] text-on-primary-container font-bold uppercase tracking-widest mb-1">Efficiency</p>
+<p class="text-xs font-medium leading-relaxed">Zone B cooling costs optimized by 4% using session-based power scheduling.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Full-Width Metric (The "High-End Tech Journal" feel) -->
+<div class="mt-12 bg-surface-container-low rounded-2xl p-10 flex flex-col md:flex-row items-center gap-10">
+<div class="w-48 h-48 flex-shrink-0 relative">
+<svg class="w-full h-full transform -rotate-90">
+<circle class="text-surface-container-highest" cx="96" cy="96" fill="transparent" r="88" stroke="currentColor" stroke-width="12"></circle>
+<circle class="text-secondary" cx="96" cy="96" fill="transparent" r="88" stroke="currentColor" stroke-dasharray="552.9" stroke-dashoffset="110" stroke-width="12"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="text-4xl font-extrabold text-primary">80%</span>
+<span class="text-[10px] font-black uppercase text-outline">Utility</span>
+</div>
+</div>
+<div class="flex-1">
+<h3 class="font-manrope text-4xl font-extrabold text-primary mb-2 tracking-tight">Ecosystem Health Score</h3>
+<p class="text-on-surface-variant max-w-2xl text-lg leading-relaxed mb-6">Your parlor is operating at optimal peak efficiency. High conversion in food &amp; beverage clusters offsets the hardware maintenance cycles scheduled for next Tuesday.</p>
+<div class="flex flex-wrap gap-4">
+<div class="bg-surface-container-lowest px-4 py-2 rounded-full flex items-center gap-2 border border-outline-variant/20">
+<div class="w-2 h-2 rounded-full bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.6)]"></div>
+<span class="text-xs font-bold text-primary">Hardware Status: Optimal</span>
+</div>
+<div class="bg-surface-container-lowest px-4 py-2 rounded-full flex items-center gap-2 border border-outline-variant/20">
+<div class="w-2 h-2 rounded-full bg-secondary shadow-[0_0_8px_rgba(13,80,213,0.6)]"></div>
+<span class="text-xs font-bold text-primary">Network Latency: 4ms</span>
+</div>
+<div class="bg-surface-container-lowest px-4 py-2 rounded-full flex items-center gap-2 border border-outline-variant/20">
+<div class="w-2 h-2 rounded-full bg-secondary shadow-[0_0_8px_rgba(13,80,213,0.6)]"></div>
+<span class="text-xs font-bold text-primary">Staff Efficiency: 98%</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

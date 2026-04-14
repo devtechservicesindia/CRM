@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Customers | GP CRM</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-tertiary": "#ffffff",
+                      "inverse-primary": "#abc7ff",
+                      "tertiary": "#3c1e00",
+                      "surface-container-highest": "#e0e3e5",
+                      "primary-fixed": "#d7e2ff",
+                      "tertiary-container": "#5b3000",
+                      "on-secondary": "#ffffff",
+                      "secondary": "#0d50d5",
+                      "tertiary-fixed": "#ffdcc1",
+                      "secondary-fixed-dim": "#b5c4ff",
+                      "secondary-container": "#386bef",
+                      "primary-fixed-dim": "#abc7ff",
+                      "on-error-container": "#93000a",
+                      "error-container": "#ffdad6",
+                      "on-primary-container": "#89a5dd",
+                      "on-primary-fixed": "#001b3f",
+                      "surface": "#f7f9fb",
+                      "surface-container": "#eceef0",
+                      "on-tertiary-container": "#d7985f",
+                      "primary-container": "#1a3a6b",
+                      "error": "#ba1a1a",
+                      "on-surface": "#191c1e",
+                      "surface-tint": "#415e91",
+                      "surface-container-lowest": "#ffffff",
+                      "on-tertiary-fixed-variant": "#693c0a",
+                      "on-primary-fixed-variant": "#284678",
+                      "on-secondary-fixed": "#00174d",
+                      "on-background": "#191c1e",
+                      "secondary-fixed": "#dbe1ff",
+                      "inverse-surface": "#2d3133",
+                      "on-primary": "#ffffff",
+                      "surface-variant": "#e0e3e5",
+                      "primary": "#002451",
+                      "on-error": "#ffffff",
+                      "on-secondary-container": "#fefcff",
+                      "on-secondary-fixed-variant": "#003dab",
+                      "on-surface-variant": "#43474f",
+                      "inverse-on-surface": "#eff1f3",
+                      "background": "#f7f9fb",
+                      "surface-container-low": "#f2f4f6",
+                      "tertiary-fixed-dim": "#fcb87d",
+                      "surface-container-high": "#e6e8ea",
+                      "on-tertiary-fixed": "#2e1500",
+                      "surface-bright": "#f7f9fb",
+                      "outline-variant": "#c4c6d0",
+                      "surface-dim": "#d8dadc",
+                      "outline": "#747780"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "fontFamily": {
+                      "headline": ["Manrope"],
+                      "body": ["Inter"],
+                      "label": ["Inter"]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .font-manrope { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .tonal-shift-only { border: none !important; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-full z-50 h-screen w-64 bg-[#002451] dark:bg-slate-950 shadow-2xl shadow-[#002451]/10 flex flex-col font-manrope text-sm font-semibold tracking-wide">
+<!-- Brand Section -->
+<div class="p-8 flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">videogame_asset</span>
+</div>
+<div>
+<h1 class="font-manrope font-black text-white text-xl tracking-tighter">GP CRM</h1>
+<p class="text-[10px] uppercase tracking-widest text-on-primary-container">The Neon Architect</p>
+</div>
+</div>
+<!-- Main Navigation -->
+<nav class="flex-1 mt-4">
+<div class="space-y-1">
+<a class="flex items-center gap-3 text-slate-400 hover:text-white py-3 px-6 transition-colors duration-200 active:scale-95 transition-transform hover:bg-[#0d50d5]/5" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+<!-- ACTIVE TAB: Customers -->
+<a class="flex items-center gap-3 bg-[#0d50d5]/10 text-white border-l-4 border-[#0d50d5] py-3 px-6 active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="group" style="font-variation-settings: 'FILL' 1;">group</span>
+<span>Customers</span>
+</a>
+<a class="flex items-center gap-3 text-slate-400 hover:text-white py-3 px-6 transition-colors duration-200 active:scale-95 transition-transform hover:bg-[#0d50d5]/5" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span>Analytics</span>
+</a>
+<a class="flex items-center gap-3 text-slate-400 hover:text-white py-3 px-6 transition-colors duration-200 active:scale-95 transition-transform hover:bg-[#0d50d5]/5" href="#">
+<span class="material-symbols-outlined" data-icon="mail">mail</span>
+<span>Messages</span>
+</a>
+</div>
+</nav>
+<!-- Footer Navigation -->
+<div class="mb-8 border-t border-white/10 pt-4">
+<a class="flex items-center gap-3 text-slate-400 hover:text-white py-3 px-6 transition-colors duration-200 active:scale-95 transition-transform hover:bg-[#0d50d5]/5" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span>Logout</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Shell -->
+<div class="pl-64 min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<header class="flex justify-between items-center pr-8 h-16 sticky top-0 z-40 bg-white/85 dark:bg-slate-900/85 backdrop-blur-md shadow-[0px_20px_40px_rgba(0,36,81,0.06)] font-manrope font-bold text-lg">
+<div class="pl-8 flex items-center gap-4">
+<h2 class="text-primary tracking-tight">Customers</h2>
+<div class="h-4 w-[1px] bg-outline-variant/30"></div>
+<p class="text-sm font-medium text-on-surface-variant/60">Manage your player directory</p>
+</div>
+<div class="flex items-center gap-6">
+<!-- Search Bar -->
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-sm">search</span>
+<input class="bg-surface-container-high border-none rounded-lg pl-10 pr-4 py-2 text-sm focus:ring-2 focus:ring-secondary/20 transition-all w-64 font-body font-normal" placeholder="Search gamers..." type="text"/>
+</div>
+<!-- Action Icons -->
+<div class="flex items-center gap-2">
+<button class="p-2 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-all text-on-surface-variant relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-secondary rounded-full border-2 border-white"></span>
+</button>
+<button class="p-2 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-all text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+</div>
+<div class="h-8 w-[1px] bg-outline-variant/30"></div>
+<button class="flex items-center gap-2 text-sm font-bold text-on-surface-variant hover:text-primary transition-colors">
+<span>Logout</span>
+<span class="material-symbols-outlined text-sm">exit_to_app</span>
+</button>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="p-8 flex-1">
+<!-- Header Actions Section -->
+<div class="flex justify-between items-end mb-8">
+<div>
+<h3 class="font-manrope text-3xl font-extrabold text-primary tracking-tight">Player Registry</h3>
+<p class="text-on-surface-variant font-body mt-1">1,248 total registered customers in your database.</p>
+</div>
+<button class="bg-gradient-to-r from-secondary to-secondary-container text-white px-6 py-3 rounded-lg font-manrope font-bold text-sm shadow-lg shadow-secondary/20 hover:opacity-90 active:scale-95 transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">person_add</span>
+                    Add New Customer
+                </button>
+</div>
+<!-- Dashboard Stats Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-[0px_20px_40px_rgba(0,36,81,0.06)] border-none">
+<p class="font-manrope font-bold text-sm text-on-surface-variant/60 uppercase tracking-widest">Active Today</p>
+<div class="flex items-end justify-between mt-2">
+<h4 class="font-manrope text-4xl font-black text-primary">142</h4>
+<span class="text-emerald-600 bg-emerald-50 px-2 py-1 rounded text-xs font-bold">+12%</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-[0px_20px_40px_rgba(0,36,81,0.06)] border-none">
+<p class="font-manrope font-bold text-sm text-on-surface-variant/60 uppercase tracking-widest">Gold Members</p>
+<div class="flex items-end justify-between mt-2">
+<h4 class="font-manrope text-4xl font-black text-primary">84</h4>
+<span class="material-symbols-outlined text-on-tertiary-container" style="font-variation-settings: 'FILL' 1;">stars</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-[0px_20px_40px_rgba(0,36,81,0.06)] border-none">
+<p class="font-manrope font-bold text-sm text-on-surface-variant/60 uppercase tracking-widest">Avg. Session</p>
+<div class="flex items-end justify-between mt-2">
+<h4 class="font-manrope text-4xl font-black text-primary">2.4h</h4>
+<span class="text-secondary material-symbols-outlined">schedule</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-[0px_20px_40px_rgba(0,36,81,0.06)] border-none">
+<p class="font-manrope font-bold text-sm text-on-surface-variant/60 uppercase tracking-widest">New Weekly</p>
+<div class="flex items-end justify-between mt-2">
+<h4 class="font-manrope text-4xl font-black text-primary">28</h4>
+<span class="text-secondary material-symbols-outlined">trending_up</span>
+</div>
+</div>
+</div>
+<!-- Customer Data Table Section -->
+<div class="bg-surface-container-lowest rounded-2xl shadow-[0px_20px_40px_rgba(0,36,81,0.06)] overflow-hidden">
+<div class="p-6 border-b border-surface-container flex items-center justify-between bg-surface-container-low/30">
+<div class="flex items-center gap-4">
+<button class="flex items-center gap-2 px-4 py-2 bg-white rounded-lg border border-outline-variant/20 text-sm font-semibold text-on-surface-variant hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-sm">filter_list</span>
+                            Filter
+                        </button>
+<button class="flex items-center gap-2 px-4 py-2 bg-white rounded-lg border border-outline-variant/20 text-sm font-semibold text-on-surface-variant hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-sm">download</span>
+                            Export
+                        </button>
+</div>
+<p class="text-xs font-body text-on-surface-variant italic">Showing 1-10 of 1,248 results</p>
+</div>
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low/50">
+<th class="px-8 py-5 font-manrope font-bold text-sm text-primary uppercase tracking-wider">Name</th>
+<th class="px-8 py-5 font-manrope font-bold text-sm text-primary uppercase tracking-wider">Phone Number</th>
+<th class="px-8 py-5 font-manrope font-bold text-sm text-primary uppercase tracking-wider">Total Spent</th>
+<th class="px-8 py-5 font-manrope font-bold text-sm text-primary uppercase tracking-wider">Last Visit</th>
+<th class="px-8 py-5 font-manrope font-bold text-sm text-primary uppercase tracking-wider">Level</th>
+<th class="px-8 py-5 font-manrope font-bold text-sm text-primary uppercase tracking-wider text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="font-body text-sm">
+<!-- Table Row 1 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-8 py-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-primary font-bold overflow-hidden">
+<img alt="Customer Profile" class="w-full h-full object-cover" data-alt="professional portrait avatar of a young man with glasses and casual hoodie smiling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1IOdbf7NrQ0Kq_2qfbWzA1244GuY3_WLRiZOB-CJkXvXN8J6VslKIlEIvtSe5S9PnhGrJ-tEVKLunoR_mjGpk9ATdUBZX2wj3w9hCh6C7JtkArOlWQi_YycCbTmcVCnLIxuHE0Gz1u4rLfdjUlRCmC7K4k8OMDMPgxUR1ztfmDEE9YT_N_a3Efpb8iuERV7ByAUXOD9zkIJ-W8PZG4YIlzjIv7-7pN7I6gMPrS4VQu02udGa12ttuBrdCDV9uUZ88_ufkIdQXXPMr"/>
+</div>
+<div>
+<p class="font-bold text-on-surface">Alex Rivera</p>
+<p class="text-xs text-on-surface-variant">arivera.gamer@email.com</p>
+</div>
+</div>
+</td>
+<td class="px-8 py-4 text-on-surface-variant font-medium">(555) 012-3456</td>
+<td class="px-8 py-4 font-bold text-primary">₹12,450.00</td>
+<td class="px-8 py-4 text-on-surface-variant">2 hours ago</td>
+<td class="px-8 py-4">
+<span class="bg-on-tertiary-container/10 text-on-tertiary-container px-3 py-1 rounded-full text-xs font-bold border border-on-tertiary-container/20">Gold</span>
+</td>
+<td class="px-8 py-4 text-right">
+<button class="p-2 hover:bg-secondary/10 rounded-lg text-secondary transition-colors">
+<span class="material-symbols-outlined">edit_note</span>
+</button>
+<button class="p-2 hover:bg-error/10 rounded-lg text-error transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Table Row 2 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-8 py-4 border-t border-surface-container-low">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-secondary-fixed flex items-center justify-center text-secondary font-bold overflow-hidden">
+<img alt="Customer Profile" class="w-full h-full object-cover" data-alt="vibrant digital avatar of a woman with dyed blue hair and gaming headset" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKJ0jTOE05pSlIeIJBcY-oLJ1lqH3dTetH63AzOSV6znyS0ODChczBioTlm1bot4ttZVFVrTcagm3BFrDOUceA9kjahuyiEvovgVmaGqxZF3Qegoli4oEO0o3S6BxEVwGZvfKQ3lS_vcDJyYviZM0HwqYyHLEpoB5FAnYjSVeFNwWbiVKqsoM32RUoD5-h-7egALi5EjAnf2_8Q8S4RP1T3jz6IPEzQmqVWRLE0CK4WOZDzG4WcUvLqiNd1AGW5_wRKgTNwfs_1RS-"/>
+</div>
+<div>
+<p class="font-bold text-on-surface">Priya Sharma</p>
+<p class="text-xs text-on-surface-variant">priya.ps5@webmail.in</p>
+</div>
+</div>
+</td>
+<td class="px-8 py-4 border-t border-surface-container-low text-on-surface-variant font-medium">(555) 987-6543</td>
+<td class="px-8 py-4 border-t border-surface-container-low font-bold text-primary">₹8,200.00</td>
+<td class="px-8 py-4 border-t border-surface-container-low text-on-surface-variant">Yesterday, 4:30 PM</td>
+<td class="px-8 py-4 border-t border-surface-container-low">
+<span class="bg-outline/10 text-outline px-3 py-1 rounded-full text-xs font-bold border border-outline/20">Silver</span>
+</td>
+<td class="px-8 py-4 border-t border-surface-container-low text-right">
+<button class="p-2 hover:bg-secondary/10 rounded-lg text-secondary transition-colors">
+<span class="material-symbols-outlined">edit_note</span>
+</button>
+<button class="p-2 hover:bg-error/10 rounded-lg text-error transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Table Row 3 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-8 py-4 border-t border-surface-container-low">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-tertiary-fixed flex items-center justify-center text-tertiary font-bold overflow-hidden">
+<img alt="Customer Profile" class="w-full h-full object-cover" data-alt="minimalist avatar of a bearded man wearing a black cap and t-shirt" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgzAPCrzy3-euRCHu0PcXE4QM-kqF6wBgrmn_Exbfq_h9l10nz7XSWx-oWyE4pGBh5tdHiOWwXxQqdyBPLW7Nz0D4zNoQCtykNTiVGbqgwUoQbIWa8VwQfI09j2YY2eLN47LvnDMAqIF8JN0-0wHGjkDTqIfAs0v3EJPL1aFJfOAstB0AP6d_ajtp2aNDi1cqxlOQX-GzDBrOlW7OZ2Ox8NQEP6un80xIoywD-YYyfr6coWO8vYtz0nT1y2F69A4CbiyIGHT0B1-n-"/>
+</div>
+<div>
+<p class="font-bold text-on-surface">Leo Maxwell</p>
+<p class="text-xs text-on-surface-variant">leo.max@gaming.com</p>
+</div>
+</div>
+</td>
+<td class="px-8 py-4 border-t border-surface-container-low text-on-surface-variant font-medium">(555) 234-5678</td>
+<td class="px-8 py-4 border-t border-surface-container-low font-bold text-primary">₹3,150.00</td>
+<td class="px-8 py-4 border-t border-surface-container-low text-on-surface-variant">Oct 12, 2023</td>
+<td class="px-8 py-4 border-t border-surface-container-low">
+<span class="bg-tertiary/10 text-tertiary px-3 py-1 rounded-full text-xs font-bold border border-tertiary/20">Bronze</span>
+</td>
+<td class="px-8 py-4 border-t border-surface-container-low text-right">
+<button class="p-2 hover:bg-secondary/10 rounded-lg text-secondary transition-colors">
+<span class="material-symbols-outlined">edit_note</span>
+</button>
+<button class="p-2 hover:bg-error/10 rounded-lg text-error transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Table Row 4 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-8 py-4 border-t border-surface-container-low">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-primary font-bold overflow-hidden">
+<img alt="Customer Profile" class="w-full h-full object-cover" data-alt="artistic avatar of a woman with short red hair and a high collar jacket" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCoJRxoE_qTRIR8KPruZdrJ2jkbVpgeqT1t4NZSdoQmXVwv1GyJLGL2QKyJDb-RpICJmQfV5xNiiwiWpIc44wSsCs_e0ea__fmKWlJXzTPfb4RHHy0HmcSRrU1D6-HJyQKJmspHI4BluOEmNKrvJwvsG12Ijqq495azLadPht6ASsQmmPexRB48Oo1GMEvMQQyGsBvz4MhZlqnFtk0I-oJle9bCeuFpq4bVj1NtWyvT3L9XalAy9tuvKrw9YTj5T1TphOeypH8sRw7k"/>
+</div>
+<div>
+<p class="font-bold text-on-surface">Chloe Zhang</p>
+<p class="text-xs text-on-surface-variant">czhang@esports.org</p>
+</div>
+</div>
+</td>
+<td class="px-8 py-4 border-t border-surface-container-low text-on-surface-variant font-medium">(555) 765-4321</td>
+<td class="px-8 py-4 border-t border-surface-container-low font-bold text-primary">₹22,900.00</td>
+<td class="px-8 py-4 border-t border-surface-container-low text-on-surface-variant">Today, 10:15 AM</td>
+<td class="px-8 py-4 border-t border-surface-container-low">
+<span class="bg-on-tertiary-container/10 text-on-tertiary-container px-3 py-1 rounded-full text-xs font-bold border border-on-tertiary-container/20">Gold</span>
+</td>
+<td class="px-8 py-4 border-t border-surface-container-low text-right">
+<button class="p-2 hover:bg-secondary/10 rounded-lg text-secondary transition-colors">
+<span class="material-symbols-outlined">edit_note</span>
+</button>
+<button class="p-2 hover:bg-error/10 rounded-lg text-error transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+<!-- Pagination Footer -->
+<div class="p-6 border-t border-surface-container flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="text-sm font-medium text-on-surface-variant">Rows per page:</span>
+<select class="bg-transparent border-none text-sm font-bold focus:ring-0 cursor-pointer">
+<option>10</option>
+<option>25</option>
+<option>50</option>
+</select>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-lg hover:bg-surface-container text-on-surface-variant disabled:opacity-30" disabled="">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<div class="flex items-center gap-1">
+<button class="w-8 h-8 rounded-lg bg-secondary text-white text-sm font-bold">1</button>
+<button class="w-8 h-8 rounded-lg hover:bg-surface-container text-sm font-bold text-on-surface-variant transition-colors">2</button>
+<button class="w-8 h-8 rounded-lg hover:bg-surface-container text-sm font-bold text-on-surface-variant transition-colors">3</button>
+<span class="px-2 text-on-surface-variant">...</span>
+<button class="w-8 h-8 rounded-lg hover:bg-surface-container text-sm font-bold text-on-surface-variant transition-colors">125</button>
+</div>
+<button class="p-2 rounded-lg hover:bg-surface-container text-on-surface-variant">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

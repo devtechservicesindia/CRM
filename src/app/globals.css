@@ -6,10 +6,23 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --green-primary: #1a5c38;
+    --green-mid: #22753f;
+    --green-light: #e8f5ee;
+    --green-accent: #2e9e5b;
+    --sidebar-width: 240px;
+  }
+
   body {
     font-family: 'Inter', sans-serif;
-    background-color: #f7f9fb;
-    color: #191c1e;
+    background-color: #f0f2f5;
+    color: #111827;
+  }
+
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   .material-symbols-outlined {
@@ -17,16 +30,51 @@
     line-height: 1;
     vertical-align: middle;
   }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar { width: 4px; height: 4px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 99px; }
+  ::-webkit-scrollbar-thumb:hover { background: #9ca3af; }
 }
 
 @layer utilities {
   .no-scrollbar::-webkit-scrollbar { display: none; }
   .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-  
   .font-manrope { font-family: 'Manrope', sans-serif; }
   
+  /* Card base */
+  .card {
+    @apply bg-white rounded-2xl shadow-[0_2px_16px_rgba(0,0,0,0.06)] border border-gray-100;
+  }
+
+  /* Text utility */
+  .label-sm {
+    @apply text-[10px] uppercase tracking-widest font-bold text-gray-400;
+  }
+
   .glass {
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
   }
+
+  /* Green gradient button */
+  .btn-green {
+    @apply bg-[#1a5c38] hover:bg-[#22753f] text-white font-bold rounded-xl transition-all active:scale-95 shadow-md shadow-[#1a5c38]/20;
+  }
+
+  /* Status pill */
+  .status-pill {
+    @apply text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full;
+  }
+}
+
+/* Smooth page transitions */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.page-enter {
+  animation: fadeUp 0.35s cubic-bezier(.16,1,.3,1) both;
 }

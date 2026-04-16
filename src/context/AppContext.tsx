@@ -6,8 +6,10 @@ import { Customer, Conversation, Message } from '@/types';
 interface AppState {
   customers: Customer[];
   conversations: Conversation[];
+  stations: Station[];
   isLoadingCustomers: boolean;
   isLoadingConversations: boolean;
+  isLoadingStations: boolean;
   selectedConversationId: string | null;
   automationSettings: { smartAutoReply: boolean; loyaltyAlert: boolean };
 }
@@ -22,6 +24,9 @@ interface AppContextType extends AppState {
   fetchConversations: () => Promise<void>;
   selectConversation: (id: string) => void;
   sendMessage: (conversationId: string, content: string) => Promise<void>;
+  // Stations
+  fetchStations: () => Promise<void>;
+  updateStation: (id: number, data: Partial<Station>) => Promise<void>;
   // Automation
   toggleAutomation: (key: 'smartAutoReply' | 'loyaltyAlert') => void;
 }
@@ -31,8 +36,10 @@ const AppContext = createContext<AppContextType | null>(null);
 export function AppProvider({ children }: { children: React.ReactNode }) {
   const [customers, setCustomers] = useState<Customer[]>([]);
   const [conversations, setConversations] = useState<Conversation[]>([]);
+  const [stations, setStations] = useState<Station[]>([]);
   const [isLoadingCustomers, setIsLoadingCustomers] = useState(false);
   const [isLoadingConversations, setIsLoadingConversations] = useState(false);
+  const [isLoadingStations, setIsLoadingStations] = useState(false);
   const [selectedConversationId, setSelectedConversationId] = useState<string | null>(null);
   const [automationSettings, setAutomationSettings] = useState({ smartAutoReply: true, loyaltyAlert: false });
 
@@ -62,6 +69,16 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     } catch (e) { console.error('Failed to fetch conversations', e); }
     finally { setIsLoadingConversations(false); }
   }, [selectedConversationId]);
+
+  const fetchStations = useCallback(async () => {
+    setIsLoadingStations(true);
+    try {
+      const res = await fetch('/api/stations');
+      const data = await res.json();
+      setStations(data);
+    } catch (e) { console.error('Failed to fetch stations', e); }
+    finally { setIsLoadingStations(false); }
+  }, []);
 
   const addCustomer = async (customer: Omit<Customer, 'id' | 'joinDate' | 'sessions' | 'isActive' | 'avgSession'>): Promise<Customer> => {
     const res = await fetch('/api/customers', {
@@ -113,6 +130,17 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     ));
   };
 
+  const updateStation = async (id: number, data: Partial<Station>) => {
+    const res = await fetch(`/api/stations/${id}`, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+    });
+    if (!res.ok) throw new Error('Failed to update station');
+    const updated = await res.json();
+    setStations(prev => prev.map(s => s.id === updated.id ? updated : s));
+  };
+
   const toggleAutomation = (key: 'smartAutoReply' | 'loyaltyAlert') => {
     setAutomationSettings(prev => {
       const next = { ...prev, [key]: !prev[key] };
@@ -123,10 +151,10 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
 
   return (
     <AppContext.Provider value={{
-      customers, conversations, isLoadingCustomers, isLoadingConversations,
+      customers, conversations, stations, isLoadingCustomers, isLoadingConversations, isLoadingStations,
       selectedConversationId, automationSettings,
-      fetchCustomers, fetchConversations, addCustomer, updateCustomer, deleteCustomer,
-      selectConversation, sendMessage, toggleAutomation,
+      fetchCustomers, fetchConversations, fetchStations, addCustomer, updateCustomer, deleteCustomer,
+      updateStation, selectConversation, sendMessage, toggleAutomation,
     }}>
       {children}
     </AppContext.Provider>
